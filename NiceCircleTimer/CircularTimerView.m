@@ -221,6 +221,8 @@
     foregroundCircle.lineWidth = strokeWidth;
     [foregroundCircle stroke];
     
+    
+    
     // update text in timer and constrain to one decimal place
     NSNumberFormatter * formatter =  [[NSNumberFormatter alloc] init];
     [formatter setMaximumFractionDigits:0];
@@ -237,6 +239,8 @@
     CGSize textSize = [self.text sizeWithAttributes:attributes];
     CGPoint textCenter = CGPointMake(center.x - textSize.width / 2, center.y - textSize.height / 2);
     
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetShadow(context, CGSizeMake(0.0f, 2.0f), 1.0f);
     
     
     [self.text drawAtPoint:textCenter withAttributes:attributes];
