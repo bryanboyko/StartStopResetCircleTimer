@@ -315,11 +315,12 @@
     [UIView animateWithDuration:0.3 animations:^{
         datePicker.frame = CGRectMake(0, screenRect.size.height - 230, 320, 250);
     }];
-    [self addCancelView];
+    [self performSelector:@selector(addCancelView) withObject:self afterDelay:0.3f];
 }
 
 - (void)addCancelView
 {
+    NSLog(@"added cancel view");
     CGRect screenRect = [[UIScreen mainScreen] bounds];
     hidePickerView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0, 320, screenRect.size.height - 230)];
     UITapGestureRecognizer *tap = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(hidePicker:)];
@@ -348,7 +349,7 @@
 - (IBAction)btnPresentPopup:(UIButton *)sender {
     BBPopupViewController *popupViewController = [[BBPopupViewController alloc] initWithNibName:@"BBPopupViewController" bundle:nil];
     [self presentPopupViewController:popupViewController animated:YES completion:nil];
-    [self performSelector:@selector(showPicker:) withObject:nil afterDelay:0.0f];
+    [self performSelector:@selector(showPicker:) withObject:nil afterDelay:0.3f];
 }
 
 - (void)dismissPopup {
@@ -358,6 +359,11 @@
         }];
     }
 }
+
+//// so that tapping popup view doesnt dismiss it
+//- (BOOL)gestureRecognizer:(UIGestureRecognizer *)gestureRecognizer shouldReceiveTouch:(UITouch *)touch {
+//    return touch.view == self.view;
+//}
 
 
 
