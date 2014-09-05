@@ -263,7 +263,6 @@
 - (void)createResetButton
 {
     resetButton = [QBFlatButton buttonWithType:UIButtonTypeCustom];
-    resetButton = [QBFlatButton buttonWithType:UIButtonTypeCustom];
     resetButton.frame = CGRectMake(190, 500, 100, 50);
     resetButton.surfaceColor = [UIColor colorWithRed:255.0/255.0 green:150.0/255.0 blue:20.0/255.0 alpha:1.0];
     resetButton.sideColor = [UIColor colorWithRed:160.0/255.0 green:80.0/255.0 blue:100.0/255.0 alpha:1.0];
@@ -282,7 +281,6 @@
 
 - (void)createTimePickerButton
 {
-    timePickerButton = [QBFlatButton buttonWithType:UIButtonTypeCustom];
     timePickerButton = [QBFlatButton buttonWithType:UIButtonTypeCustom];
     timePickerButton.frame = CGRectMake(70, 440, 180, 50);
     timePickerButton.surfaceColor = [UIColor colorWithRed:150.0/255.0 green:150.0/255.0 blue:255.0/255.0 alpha:1.0];
